@@ -1,18 +1,23 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\FolderController;
 use App\Http\Controllers\FileUploadController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+
+//create folder
+Route::get('/directories',function(){
+    return view('directory');
+});
+Route::post('/add-folder',[FolderController::class, 'store']);
+
+Route::get('/add-folder', function () {
+    return view('create_folder');
+});
+//add sub-folder
+Route::get('/add-sub-folder', function () {
+    return view('create_sub_folder');
+});
 
 Route::get('/', function () {
     return view('welcome');
@@ -25,7 +30,7 @@ Route::get('/add-files', function () {
     return view('get_file_upload_page');
 });
 
-Route::post('/submit-file', [FileUploadController::class,'store']);
+Route::post('/submit-files', [FileUploadController::class,'store']);
 
 
 Route::get('/dashboard', function () {

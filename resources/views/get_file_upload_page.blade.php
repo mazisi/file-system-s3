@@ -2,7 +2,7 @@
 @section('content')
 
 
-<div id="main">
+<div id="main"> 
   <div class="row">
     <div class="col s12">
       <div id="multiple-file-input" class="card card-tabs">
