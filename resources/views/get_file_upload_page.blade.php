@@ -18,6 +18,7 @@
            
             <form action="/submit-file" method="POST" enctype="multipart/form-data">
               @csrf
+              
               <div class="file-field input-field">
                 <div class="btn">
                   <span>File</span>

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class File extends Model
 {
     use HasFactory;
-    protected $guaded = [];
+    protected $guarded = [];
 
 
     public function folder()
