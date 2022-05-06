@@ -1,14 +1,14 @@
 <?php
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\FolderController;
-use App\Http\Controllers\FileUploadController;
+use App\Http\Controllers\FileController;
 
 
 //create folder
 Route::get('/directories',function(){
     return view('directory');
 });
+
 Route::post('/add-folder',[FolderController::class, 'store']);
 
 Route::get('/add-folder', function () {
@@ -18,6 +18,8 @@ Route::get('/add-folder', function () {
 Route::get('/add-sub-folder', function () {
     return view('create_sub_folder');
 });
+// view files
+Route::get('/view-files/{type}',[FileController::class ,'viewFilesByType']);
 
 Route::get('/', function () {
     return view('welcome');
@@ -30,7 +32,7 @@ Route::get('/add-files', function () {
     return view('get_file_upload_page');
 });
 
-Route::post('/submit-files', [FileUploadController::class,'store']);
+Route::post('/submit-files', [FileController::class,'store']);
 
 
 Route::get('/dashboard', function () {

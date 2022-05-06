@@ -11,7 +11,7 @@ class Folder extends Model
 
     protected $guarded = [];
 
-    public function file()
+    public function files()
     {
        return $this->hasMany(File::class);
     }
